@@ -17,6 +17,18 @@ My fist attempt to start using ngrok for that didn't really work immediately:
 
 I defined the messaging endpoint as https://xx00x2ex5.ngrok.io/api/messages as described above. But during the tests I was not able to reach my bot implementation receiving the following error message:
 
-![snippet4](snippet4.png).
+![snippet3](snippet3.png).
 
+ngrok gives you an excellent log information in its web interface - in my case it was localhost 4040 and I could see the following message:
+
+![snippet4](snippet4.png)
+
+Apparently, my local webserver refused to accept requests re-directed to the local host from the ngrok host.
+The following command line worked fine and I was able to debug locally my Direct Line API enabled bot.
+
+![snippet5](snippet5.png)
+
+In this article I wanted to highlight two things:
+1.	There is a way to use the web chat control in a more flexible way, passing the context information from the hosting webpage to the bot through the Direct Line API.
+2.	How to configure your environment and debug locally your Direct Line API enabled bot receiving
 
