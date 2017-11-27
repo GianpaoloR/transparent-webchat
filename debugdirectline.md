@@ -17,6 +17,6 @@ My fist attempt to start using ngrok for that didn't really work immediately:
 
 I defined the messaging endpoint as https://xx00x2ex5.ngrok.io/api/messages as described above. But during the tests I was not able to reach my bot implementation receiving the following error message:
 
-![snippet3](snippet3.png).
+![snippet4](snippet4.png).
 
 
