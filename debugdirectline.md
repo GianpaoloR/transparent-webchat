@@ -5,7 +5,7 @@ In this case you would probably move away from the iframe and decide to implemen
 
 ![snippet1](snippet1.png).
 
-But if you decide to use the Direct Line API channel and debug your bot receiving this contextual information, you would need to define your public messaging endpoint - see below 
+But if you decide to use the [Direct Line API](https://docs.microsoft.com/en-us/bot-framework/rest-api/bot-framework-rest-direct-line-3-0-concepts) channel and debug your bot receiving this contextual information, you would need to define your public messaging endpoint - see below 
 
 ![snippet1-1](snippet1-1.png).
 
