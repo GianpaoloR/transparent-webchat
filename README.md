@@ -1,2 +1,2 @@
-# transparent-webchat
-This repository will contain a number of turorials on Microsoft Bot Framework
+# Transparent WebChat authentication with Microsoft Bot Framework
+This repository will contain a number of tutorials on Microsoft Bot Framework
