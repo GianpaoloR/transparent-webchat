@@ -1,11 +1,11 @@
-# Debugging your bot connected to the Direct Line API channel
+#Debugging your bot connected to the Direct Line API channel
 I'm currently working on a prototype of a web chat bot which will be embedded into a website. The easiest way to do it is to embed the iframe of your web chat control into your website. You can find more information on that here.
 But what if you want to pass some information to your bot implementation from the hosting web page? Some kind of contextual information might be very useful, and the most interesting scenario is a user-friendly Single-Sign-On (SSO), where the hosting webpage would pass a user name or even a JWT access token to your bot implementation. The bot would trust this authenticated user and use the token for the further requests to the resources also protected by the same token issuer. One example is the [Graph API](https://developer.microsoft.com/en-us/graph/docs/concepts/overview) accessing user's Office 365 data.
-In this case you would probably move away from the iframe and decide to implement a Direct Line API talking to your bot and using a javascript library representing the webchat control. You can find a nice example for that [here](https://docs.microsoft.com/en-us/bot-framework/channel-connect-webchat) 
+In this case you would probably move away from the iframe and decide to implement a [Direct Line API](https://docs.microsoft.com/en-us/bot-framework/rest-api/bot-framework-rest-direct-line-3-0-concepts) talking to your bot and using a javascript library representing the webchat control. You can find a nice example for that [here](https://docs.microsoft.com/en-us/bot-framework/channel-connect-webchat) 
 
 ![snippet1](snippet1.png).
 
-But if you decide to use the [Direct Line API](https://docs.microsoft.com/en-us/bot-framework/rest-api/bot-framework-rest-direct-line-3-0-concepts) channel and debug your bot receiving this contextual information, you would need to define your public messaging endpoint - see below 
+But if you decide to use the Direct Line API channel and debug your bot receiving this contextual information, you would need to define your public messaging endpoint - see below 
 
 ![snippet1-1](snippet1-1.png).
 
