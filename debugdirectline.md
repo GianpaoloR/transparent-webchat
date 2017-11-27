@@ -10,7 +10,7 @@ But if you decide to use the Direct Line API channel and debug your bot receivin
 ![snippet1-1](snippet1-1.png).
 
 So, how would you debug your bot running locally? You cannot just put your http://localhost:3979/api/messages in the text box above. It's obvious that you'll need to use a proxy redirecting the requests from a routable host to your localhost:3979.
-[This article](https://docs.microsoft.com/en-us/bot-framework/debug-bots-emulator) describes how to use ngrok for some testing scenarios involving the Bot Framework Channel Emulator, but what if you want to debug the requests coming from your hosting webpage as described above?
+[This article](https://docs.microsoft.com/en-us/bot-framework/debug-bots-emulator) describes how to use [ngrok](https://ngrok.com/docs) for some testing scenarios involving the Bot Framework Channel Emulator, but what if you want to debug the requests coming from your hosting webpage as described above?
 My fist attempt to start using ngrok for that didn't really work immediately:
 
 ![snippet2](snippet2.png).
