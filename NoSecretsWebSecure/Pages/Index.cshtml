@@ -1,0 +1,65 @@
+﻿
+    @page
+    @model NoSecretsWebSecure.Pages.IndexModel
+    @{
+        ViewData["Title"] = "WebChat";
+    }
+
+    <h2>Web Chat</h2>
+    <script src="https://cdn.botframework.com/botframework-webchat/latest/botchat.js"></script>
+    <p>
+        <div id="bot" />
+    </p>
+    <script>
+   var user = {
+    id: '@Model.UserName',
+    name: '@Model.UserName'
+    };
+
+
+    var bot = {
+        id: 'nosecretsbot-impl',
+        name: 'No Secrets Bot'
+    };
+
+
+        var botConnect = new BotChat.DirectLine({
+            secret: '@Model.DLSecret',
+            webSockets: 'true'
+        });
+
+
+        // Spread equivalent function
+        // see more here - https://stackoverflow.com/questions/46849890/sending-channeldata-to-webchat-with-each-message
+        // thank you, GaboG!
+        function getBotConnectionDetail(botconnection) {
+            var botConnectionDetail = {};
+            var keys = Object.keys(botconnection);
+            for (var i = 0; i < keys.length; i++) {
+                botConnectionDetail[keys[i]] = botconnection[keys[i]];
+            };
+
+
+        botConnectionDetail['postActivity'] = function (activity) {
+            activity.channelData = { idToken: '@Model.IdToken' };
+            return botconnection.postActivity(activity)
+            };
+            return botConnectionDetail;
+        }
+
+        // Invokes Bot
+        BotChat.App({
+            botConnection: getBotConnectionDetail(botConnect),
+            user: user,
+            bot: bot,
+            resize: 'detect'
+        },
+            document.getElementById("bot")
+        );
+
+    </script>
+
+
+    @section Scripts {
+        @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    }
