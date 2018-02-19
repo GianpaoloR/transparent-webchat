@@ -1,5 +1,7 @@
-
 # Single Sign-On Web Chat Bot protected by the Azure AD 
+
+Once your user is authenticated by the hosting web app, it will also be authenticated for your bot implementation. 
+
 The solution consists of two parts:
 The hosting web app fetching the Azure AD id token, and the bot implementation receiving this token and validating it.
 The id token is passed with each message to the bot implementation through the channel data (aka back-channel) with the Direct Line API. The bot implementation validates the token and gives the authenticated user access to the bot implementation logic. 
