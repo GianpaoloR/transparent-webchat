@@ -1,3 +1,4 @@
+
 # Single Sign-On Web Chat Bot protected by the Azure AD 
 The solution consists of two parts:
 The hosting web app fetching the Azure AD id token, and the bot implementation receiving this token and validating it.
@@ -7,11 +8,16 @@ The solution is a non-optimized and non-productive prototype.
 The hosting web app is based on ASP.NET Core 2.0. Use the [Secret Manager](https://blogs.msdn.microsoft.com/mihansen/2017/09/10/managing-secrets-in-net-core-2-0-apps/) for your DirectLineSecret setting.
 
 The config file for the bot implementation needs the following secrets:
+
  key="MicrosoftAppId" value="YOURAPPID"
+
  key="MicrosoftAppPassword" value="YOURAPPPASSWORD"
+ 
  key="AzureWebJobsStorage" value="YOURSTORAGECONNSTRING"
+ 
  key="AzureWebJobsDashboard" value="YOURSTORAGECONNSTRING"
- add key="HostingWebAppId" value="YOURHOSTINGWEBAPPID"    
+ 
+ key="HostingWebAppId" value="YOURHOSTINGWEBAPPID"    
 
 In order to be able to run this solution you need: 
 
