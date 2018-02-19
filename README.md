@@ -14,4 +14,4 @@ In order to be able to run this solution you need:
 
 3. You need to enable your bot for the Direct Line channel and use the secret to access the channel. You can optimize it and use the Direct Line token instead.
 
-You can debug the solution with ngrok as described [here](https://developer.microsoft.com/en-us/graph/docs/concepts/overview)
+You can debug the solution with ngrok as described [here](debugdirectline.md)
