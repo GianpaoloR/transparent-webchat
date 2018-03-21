@@ -25,17 +25,21 @@ namespace Microsoft.Bot.Sample.SimpleEchoBot
         [ResponseType(typeof(void))]
         public virtual async Task<HttpResponseMessage> Post([FromBody] Activity activity)
         {
+            var connector = new ConnectorClient(new Uri(activity.ServiceUrl));
+
             // check if activity is of type message
             if (activity.Type == ActivityTypes.Message)
             {
                 string channelDataJson = activity.ChannelData.ToString();
                 dynamic channelData = JObject.Parse(channelDataJson);
-
                 string token = channelData.idToken;
-                
+
+                //await context.PostAsync($"Hello {context.Activity.From.Name}");
+
                 if (ValidateJwt(token))
                 {
-                    await Conversation.SendAsync(activity, () => new EchoDialog());
+                    // await Conversation.SendAsync(activity, () => new EchoDialog());
+                    await Conversation.SendAsync(activity, () => new QnADialog());
                 }
                 else
                 {

@@ -1,6 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\.vs (2)",
+    "\\NoSecretsWebSecure\\Pages"
   ],
+  "SelectedNode": "\\NoSecretsBot.sln",
   "PreviewInSolutionExplorer": false
 }
